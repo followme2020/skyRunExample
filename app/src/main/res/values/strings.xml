@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">skyRunExample</string>
+    <string name="logo">Logo</string>
+    <string name="slogan">Находи, выбирай, покупай</string>
+    <string name="join_now">Зарегистрироватся</string>
+    <string name="login">Войти</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Добро пожаловать!"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="phone_number">Номер телефона</string>
+    <string name="password">Пароль</string>
+    <string name="remember">Запомнить меня</string>
+    <string name="forgot_pass">Забыли пароль?</string>
+    <string name="register">Зарегестрировать</string>
+    <string name="name">Иван Иванов</string>
+    <string name="back_to_home">На главную</string>
+    <string name="add_new_product">Добавить товар</string>
+    <string name="kugoo">Wide wheel e scooter</string>
+    <string name="e_scooter">Electrical Scooter</string>
+    <string name="mono_wheel">Mono Wheel</string>
+    <string name="admin">Админ</string>
+    <string name="not_admin">Не Админ?</string>
+</resources>
