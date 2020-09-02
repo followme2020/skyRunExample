@@ -7,14 +7,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-public class AdminCategoryActivity extends AppCompatActivity {
+public class AdminCategoryActivity extends AppCompatActivity
+{
 
     private ImageView citycocos, eScooters, monoWheels, bycycles;
     private ImageView gyros, ninebots, toyATVs, accessories;
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_category);
 

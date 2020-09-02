@@ -37,7 +37,8 @@ public class LoginActivity extends AppCompatActivity
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
@@ -95,7 +96,7 @@ public class LoginActivity extends AppCompatActivity
         }
         else
         {
-            loadingBar.setTitle("Create Account");
+            loadingBar.setTitle("Connecting to server");
             loadingBar.setMessage("Please wait, logging in");
             loadingBar.setCanceledOnTouchOutside(false);
             loadingBar.show();
@@ -115,9 +116,11 @@ public class LoginActivity extends AppCompatActivity
         final DatabaseReference RootRef;
         RootRef = FirebaseDatabase.getInstance().getReference();
 
-        RootRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        RootRef.addListenerForSingleValueEvent(new ValueEventListener()
+        {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot)
+            {
                 if (dataSnapshot.child(parentDbName).child(phone).exists())
                 {
                     Users usersData = dataSnapshot.child(parentDbName).child(phone).getValue(Users.class);
@@ -161,7 +164,8 @@ public class LoginActivity extends AppCompatActivity
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+            public void onCancelled(@NonNull DatabaseError error)
+            {
 
             }
         });

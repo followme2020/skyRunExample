@@ -21,14 +21,16 @@ import com.google.firebase.database.ValueEventListener;
 
 import io.paperdb.Paper;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+{
     private ProgressDialog loadingBar;
 
 
     private Button joinNowButton, loginButton;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -73,31 +75,40 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void AllowAccess(final String phone, final String password) {
+    private void AllowAccess(final String phone, final String password)
+    {
 
         final DatabaseReference RootRef;
         RootRef = FirebaseDatabase.getInstance().getReference();
 
-        RootRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        RootRef.addListenerForSingleValueEvent(new ValueEventListener()
+        {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.child("Users").child(phone).exists()) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot)
+            {
+                if (dataSnapshot.child("Users").child(phone).exists())
+                {
                     Users usersData = dataSnapshot.child("Users").child(phone).getValue(Users.class);
                     assert usersData != null;
-                    if (usersData.getPhone().equals(phone)) {
-                        if (usersData.getPassword().equals(password)) {
+                    if (usersData.getPhone().equals(phone))
+                    {
+                        if (usersData.getPassword().equals(password))
+                        {
                             Toast.makeText(MainActivity.this, "Success! Start browsing categories", Toast.LENGTH_SHORT).show();
                             loadingBar.dismiss();
 
                             Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                             startActivity(intent);
                         }
-                        else {
+                        else
+                        {
                             loadingBar.dismiss();
                             Toast.makeText(MainActivity.this, "Password is not correct", Toast.LENGTH_SHORT).show();
                         }
                     }
-                } else {
+                }
+                else
+                {
                     Toast.makeText(MainActivity.this, "Account does not exists!", Toast.LENGTH_SHORT).show();
                     loadingBar.dismiss();
                     Toast.makeText(MainActivity.this, "Please verify phone number, or create new account!", Toast.LENGTH_SHORT).show();
@@ -105,7 +116,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+            public void onCancelled(@NonNull DatabaseError error)
+            {
 
             }
         });

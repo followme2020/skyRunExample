@@ -84,10 +84,13 @@ public class RegisterActivity extends AppCompatActivity {
         final DatabaseReference RootRef;
         RootRef = FirebaseDatabase.getInstance().getReference();
 
-        RootRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        RootRef.addListenerForSingleValueEvent(new ValueEventListener()
+        {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (!(dataSnapshot.child("Users").child(phone).exists())){
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot)
+            {
+                if (!(dataSnapshot.child("Users").child(phone).exists()))
+                {
                     HashMap<String, Object> userdataMap = new HashMap<>();
                     userdataMap.put("phone", phone);
                     userdataMap.put("password", password);
@@ -97,7 +100,8 @@ public class RegisterActivity extends AppCompatActivity {
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
-                                    if (task.isSuccessful()) {
+                                    if (task.isSuccessful())
+                                    {
                                         Toast.makeText(RegisterActivity.this, "Congrats, your account is now created", Toast.LENGTH_SHORT).show();
                                         loadingBar.dismiss();
 

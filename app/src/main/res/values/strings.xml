@@ -26,4 +26,8 @@
     <string name="mono_wheel">Mono Wheel</string>
     <string name="admin">Админ</string>
     <string name="not_admin">Не Админ?</string>
+    <string name="add_product">добавить</string>
+    <string name="product_price">Цена</string>
+    <string name="description">Описание</string>
+    <string name="product_name_create_new">Название</string>
 </resources>
