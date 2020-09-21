@@ -83,6 +83,8 @@ public class HomeActivity extends AppCompatActivity
 
         userNameTextView.setText(Prevalent.currentOnlineUser.getName());
 
+        Picasso.get().load(Prevalent.currentOnlineUser.getImage()).placeholder(R.drawable.ic_baseline_account_circle_24).into(profileImageView);
+
         recyclerView = findViewById(R.id.recycler_menu);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
