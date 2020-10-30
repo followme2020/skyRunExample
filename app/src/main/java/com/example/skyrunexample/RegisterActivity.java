@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -24,7 +25,7 @@ import java.util.HashMap;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private Button CreateAccountButton;
+    private Button CreateAccountButton, BackToMainBtn;
     private EditText InputName, InputPhoneNumber, InputPassword;
     private ProgressDialog loadingBar;
 
@@ -34,6 +35,7 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         CreateAccountButton = (Button) findViewById(R.id.register_btn);
+        BackToMainBtn = (Button) findViewById(R.id.back_to_home);
         InputName = (EditText) findViewById(R.id.register_username_input);
         InputPassword = (EditText) findViewById(R.id.register_password_input);
         InputPhoneNumber = (EditText) findViewById(R.id.register_phone_number_input);
@@ -47,7 +49,16 @@ public class RegisterActivity extends AppCompatActivity {
                 CreateAccount();
             }
         });
+
+        BackToMainBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
 
     private void CreateAccount()
     {
