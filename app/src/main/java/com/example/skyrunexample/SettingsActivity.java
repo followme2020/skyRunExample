@@ -46,7 +46,8 @@ public class SettingsActivity extends AppCompatActivity
     private String checker = "";
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
@@ -120,7 +121,7 @@ public class SettingsActivity extends AppCompatActivity
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode==CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE && resultCode==RESULT_OK && data!=null)
+        if (requestCode==CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE & resultCode==RESULT_OK & data!=null)
         {
             CropImage.ActivityResult result = CropImage.getActivityResult(data);
             result.getUri();
@@ -225,6 +226,7 @@ public class SettingsActivity extends AppCompatActivity
                                  final EditText userPhoneEditText, final EditText addressEditText)
     {
         DatabaseReference UsersRef = FirebaseDatabase.getInstance().getReference().child("User").child(Prevalent.currentOnlineUser.getPhone());
+
         UsersRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot)
