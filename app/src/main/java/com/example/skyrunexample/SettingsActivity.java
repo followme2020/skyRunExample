@@ -251,7 +251,7 @@ public class SettingsActivity extends AppCompatActivity
             }
 
             @Override
-            public void onCancelled(DatabaseError error) {
+            public void onCancelled(DatabaseError databaseError) {
 
             }
         });
