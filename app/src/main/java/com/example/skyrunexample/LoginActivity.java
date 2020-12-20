@@ -67,7 +67,7 @@ public class LoginActivity extends AppCompatActivity
             public void onClick(View view)
             {
                 Intent intent = new Intent(LoginActivity.this, ResetPasswordActivity.class);
-                intent.putExtra("login", "check");
+                intent.putExtra("check", "login");
                 startActivity(intent);
 
             }
@@ -96,6 +96,8 @@ public class LoginActivity extends AppCompatActivity
     }
     private void LoginUser()
     {
+
+
         String phone = InputNumber.getText().toString();
         String password = InputPassword.getText().toString();
 
