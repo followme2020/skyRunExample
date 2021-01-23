@@ -9,10 +9,12 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.skyrunexample.Model.Users;
 import com.example.skyrunexample.Prevalent.Prevalent;
+import com.example.skyrunexample.Sellers.SellerRegistrationActivity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,7 +26,7 @@ import io.paperdb.Paper;
 public class MainActivity extends AppCompatActivity
 {
     private ProgressDialog loadingBar;
-
+    private TextView sellerAccess;
 
     private Button joinNowButton, loginButton;
 
@@ -37,7 +39,9 @@ public class MainActivity extends AppCompatActivity
 
         joinNowButton = (Button) findViewById(R.id.main_join_now_btn);
         loginButton = (Button) findViewById(R.id.main_login_btn);
+        sellerAccess = (TextView) findViewById(R.id.seller_enter);
         loadingBar = new ProgressDialog(this);
+
 
         Paper.init(this);
 
@@ -45,6 +49,14 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view){
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        sellerAccess.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(MainActivity.this, SellerRegistrationActivity.class);
                 startActivity(intent);
             }
         });
